@@ -1,0 +1,6 @@
+.footer{
+  margin-top: 3em;
+}
+.container{
+ display: grid; place-content: center; padding-top: 15px;
+}
