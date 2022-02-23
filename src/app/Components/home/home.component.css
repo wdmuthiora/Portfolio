@@ -1,0 +1,22 @@
+.home {
+  display: flex;
+  background: url("../../../assets/images/alex-gruber-GPTlhyev9vw-unsplash.jpg")
+    no-repeat center;
+  height: 100vh;
+  color: #fff;
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Ubuntu", sans-serif;
+  padding-top: 5.875em;
+}
+.home-text{
+  font-size: 50px;
+  font-weight: 900;
+}
+.home-container {
+  padding: 7em;
+  width: 100%;
+  height: fit-content;
+  transform: translateY(33%);
+}

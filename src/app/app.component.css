@@ -1,6 +1,11 @@
-.footer{
-  margin-top: 3em;
+.footer {
+  margin-top: 6em;
 }
-.container{
- display: grid; place-content: center; padding-top: 15px;
+.nav-container {
+  height: 100%;
+  display: grid;
+  place-content: center;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
+

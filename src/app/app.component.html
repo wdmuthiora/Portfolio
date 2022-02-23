@@ -1,5 +1,5 @@
 <nav class="navbar fixed-top navbar-dark bg-dark">
-  <div class="container mt-4 nav-container" >
+  <div class="container nav-container">
     <ul class="nav">
       <li class="nav-item">
         <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/home" routerLinkActive="active" style="
@@ -46,11 +46,13 @@
     </ul>
   </div>
 </nav>
-<hr />
-<br />
+
+<app-home></app-home>
+
 <footer class="footer">
-  <span style="display: grid; place-content: center;">
-    2022 All rights reserved.</span>
+  <span style="display: grid; place-content: center">
+    2022 All rights reserved.
+  </span>
 </footer>
 
 <router-outlet></router-outlet>
