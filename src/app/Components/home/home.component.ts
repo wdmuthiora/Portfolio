@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import { Component, OnInit } from '@angular/core'; 
+import Typed from 'typed.js';
+
 
 @Component({
   selector: 'app-home',
@@ -10,6 +13,24 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    $(document).ready(function () {
+     
+      // typing text animation script
+      var typed = new Typed('.typing', {
+        strings: [
+          'a Java Developer',
+          'An Android Developer',
+          'a Javascript Developer',
+          'an Angular Developer',
+          'a Fullstack Mobile and Web Developer',
+        ],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+      });
+      
+    });
   }
 
 }

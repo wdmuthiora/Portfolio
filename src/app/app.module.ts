@@ -9,6 +9,7 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { SkillsComponent } from './Components/skills/skills.component';
 import { HomeComponent } from './Components/home/home.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
