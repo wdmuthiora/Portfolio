@@ -1,7 +1,6 @@
 h1 {
   display: grid;
   place-items: center;
-  position: relative;
   font-size: 40px;
   font-weight: 500;
   margin-bottom: 60px;
@@ -18,11 +17,10 @@ h3 {
   text-align: center;
   color: crimson;
   padding: 0.71%;
+  font-weight: 400;
 }
 
 button {
-  display: grid;
-  place-content: center;
   background: crimson;
   color: #fff;
   font-size: 25px;
@@ -39,10 +37,11 @@ button:hover {
   background: none;
   color: crimson;
 }
+/* cv button section */
 form {
   margin-top: 40px;
   display: grid;
-  place-content: center;
+  place-items: center;
 }
 
 /* That stylish undeline*/
@@ -51,8 +50,8 @@ form {
 }
 
 .title::after {
-  background: white ;
-  content: "what i provide";
+  background: white;
+  content: "who i am";
   color: crimson;
   position: absolute;
   padding: 0 5px;
@@ -70,4 +69,8 @@ form {
   left: 50%;
   bottom: 0px;
   transform: translate(-50%);
+}
+.column-right {
+  padding-right: 85px;
+  padding-left: 85px;
 }

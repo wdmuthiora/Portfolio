@@ -1,0 +1,71 @@
+.services {
+  color: white;
+  background: black;
+  padding: 100px;
+  display: block;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  position: relative;
+}
+
+.title::after {
+  background: black;
+  content: "what i provide";
+  color: crimson;
+  position: absolute;
+  padding: 0 5px;
+  font-size: 20px;
+  left: 50%;
+  bottom: -8px;
+  transform: translate(-50%);
+}
+.title::before {
+  content: "";
+  position: absolute;
+  background: crimson;
+  height: 3px;
+  width: 180px;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%);
+}
+h2 {
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+}
+.card {
+  width: calc(33%-20px);
+  background: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 50px 25px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  transform: scale(1.05);
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+.card:hover {
+  background: crimson;
+  color: white;
+}
+.serv-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
