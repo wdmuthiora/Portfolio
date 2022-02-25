@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
       var typed = new Typed('.typing', {
         strings: [
           'a Java Developer',
-          'An Android Developer',
+          'an Android Developer',
           'a Javascript Developer',
           'an Angular Developer',
           'a Fullstack Mobile and Web Developer',

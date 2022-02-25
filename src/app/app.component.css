@@ -5,7 +5,13 @@
   height: 100%;
   display: grid;
   place-content: center;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+  padding-top: 1.1em;
+  padding-bottom: 1.1em;
+}
+
+a {
+  color: white;
+  text-shadow: 0 0 1px crimson;
+  padding-right: 3em;
 }
 
