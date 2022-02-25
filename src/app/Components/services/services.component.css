@@ -48,7 +48,7 @@ h2 {
 }
 .card {
   width: calc(33%-20px);
-  background: black;
+  background: rgb(44, 44, 44);
   text-align: center;
   border-radius: 6px;
   padding: 50px 25px;
@@ -57,7 +57,8 @@ h2 {
   transform: scale(1.05);
   font-size: 25px;
   font-weight: 500;
-  margin: 10px 0 7px 0;
+  margin: 70px 0;
+  color: crimson;
 }
 .card:hover {
   background: crimson;
@@ -68,4 +69,25 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none !important;
+  border-radius: 50%;
+  border: 2px solid crimson !important;
+  transition: all 0.3s ease;
+}
+.owl-dot.active {
+  width: 35px;
+  border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover {
+  background: crimson !important;
 }

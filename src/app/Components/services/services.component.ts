@@ -4,37 +4,47 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
-  styleUrls: ['./services.component.css']
+  styleUrls: ['./services.component.css'],
 })
 export class ServicesComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    $(document).ready(function () {
-      // owl carousel script
-      $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplay: true,
-        autoplayTimeOut: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 1,
-            nav: false,
-          },
-          600: {
-            items: 2,
-            nav: false,
-          },
-          1000: {
-            items: 3,
-            nav: false,
-          },
-        },
-      });
-    })
-  }
+  customOptions: OwlOptions = {
+    loop: true,
+    margin:30,
+    autoplay: true,
+    mouseDrag: false,
+    touchDrag: false,
+    pullDrag: false,
+    dots: false,
+    autoplayTimeout:2000,
+    autoplayHoverPause: true,
+    navSpeed: 1900,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      740: {
+        items: 3,
+      },
+      940: {
+        items: 4,
+      },
+    },
+    nav: true, 
+  };
 
+  slides = [
+    { name: 'REST API development' },
+    { name: 'FullStack Web Development' },
+    { name: 'Android Apps Development' },
+    { name: 'Angular Development' },
+    { name: 'Fullstack Mobile and Web Development' },
+  ];
 }
