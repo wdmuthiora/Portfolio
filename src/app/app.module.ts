@@ -9,7 +9,8 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { SkillsComponent } from './Components/skills/skills.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ServicesComponent } from './Components/services/services.component';
-
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,15 @@ import { ServicesComponent } from './Components/services/services.component';
     ContactComponent,
     SkillsComponent,
     HomeComponent,
-    ServicesComponent
+    ServicesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
