@@ -22,7 +22,7 @@ export class ServicesComponent implements OnInit {
     autoplayTimeout:2000,
     autoplayHoverPause: true,
     navSpeed: 1900,
-    navText: ['', ''],
+    navText: ["", ""],
     responsive: {
       0: {
         items: 1,

@@ -39,3 +39,8 @@
   background: none;
   color: white;
 }
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}

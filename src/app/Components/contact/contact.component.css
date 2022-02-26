@@ -1,0 +1,84 @@
+/* That stylish undeline*/
+.title {
+  position: relative;
+}
+
+.title::after {
+  background: white;
+  content: "who i am";
+  color: crimson;
+  position: absolute;
+  padding: 0 5px;
+  font-size: 20px;
+  left: 50%;
+  bottom: -8px;
+  transform: translate(-50%);
+}
+.title::before {
+  content: "";
+  position: absolute;
+  background: #111;
+  height: 3px;
+  width: 180px;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+h2 {
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+}
+section {
+  padding: 100px 0;
+  margin: 0;
+  text-decoration: none;
+  display: block;
+}
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.column-left {
+  width: calc(50% -30px);
+  display: block;
+}
+.column-right {
+  width: calc(50% -30px);
+  display: block;
+}
+.contact .contact-content .text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.div {
+  display: block;
+}
+p {
+  text-align: justify;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.icons{
+  margin: 10px 0;
+}

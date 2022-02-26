@@ -74,3 +74,8 @@ form {
   padding-right: 105px;
   padding-left: 105px;
 }
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
