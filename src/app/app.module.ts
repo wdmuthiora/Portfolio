@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,9 @@ import { HomeComponent } from './Components/home/home.component';
 import { ServicesComponent } from './Components/services/services.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ContactService } from './services/contact service/contact.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CarouselModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    NgbModule,
   ],
-  providers: [],
+  providers: [ContactService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

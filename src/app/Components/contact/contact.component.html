@@ -8,12 +8,11 @@
         <p>Reach out to me directly</p>
 
         <div class="icons">
-
           <div class="row">
             <i class="fas fa-user"></i>
             <div class="info">
               <div class="head">Name</div>
-              <div class="sub-title"> Muthiora Wathiru</div>
+              <div class="sub-title">Muthiora Wathiru</div>
             </div>
           </div>
 
@@ -32,9 +31,7 @@
               <div class="sub-title">wdmuthiora@gmail.com</div>
             </div>
           </div>
-
         </div>
-
       </div>
 
       <div class="column right">
@@ -42,34 +39,90 @@
           <p>Message me</p>
         </div>
 
-        <form []>
+        <form [formGroup]="emailForm" (ngSubmit)="sendMessage()">
           <div class="fields">
-        
             <div class="field name">
-              <input type="text" placeholder="Name" required />
+              <input
+                placeholder="Name"
+                required
+                type="text"
+                name="user_name"
+                formControlName="name"
+              />
             </div>
 
             <div class="field email">
-              <input type="email" placeholder="Email" required />
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                name="user-email"
+                formControlName="email"
+              />
             </div>
-
           </div>
-         
+
           <div class="field">
-            <input type="text" placeholder="Subject" required />
+            <input
+              type="text"
+              placeholder="Subject"
+              required
+              name="Subject"
+              formControlName="subject"
+            />
           </div>
-         
-          <div class="field textarea">
-            <textarea cols="30" rows="10" placeholder="Message.." required></textarea>
-          </div>
-         
-          <div class="button-area">
-            <button type="submit">Send message</button>
-          </div>
-        
-        </form>
 
+          <div class="field textarea">
+            <textarea
+              cols="30"
+              rows="10"
+              placeholder="Message.."
+              required
+              type="text"
+              name="Message"
+              formControlName="message"
+            ></textarea>
+          </div>
+
+          <div class="button-area">
+            <button
+              type="submit"
+              [disabled]="emailForm.invalid"
+              (click)="sendMessage()"
+            >
+              Send message
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Confirmation Modal section -->
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+
+<hr>
+
+<pre>{{ closeResult }}</pre>
