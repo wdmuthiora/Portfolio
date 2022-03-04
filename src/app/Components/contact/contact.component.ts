@@ -16,8 +16,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  constructor() {}
-
   ngOnInit(): void {}
 
   //bind the form, and its fields to model.
@@ -28,19 +26,42 @@ export class ContactComponent implements OnInit {
     message: new FormControl(''),
   });
 
-  sendMessage() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.emailForm.value);
-    const container = document.getElementById('main-container');
-    const button = document.createElement('button');
+  closeResult = '';
 
-    button.type = 'button'; //default type for button is submit.
-    button.style.display = 'none';
+  constructor(private modalService: NgbModal) {}
 
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#confirmationModal');
-    container?.appendChild(button);
-    button.click();
+  // modal section
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+              this.emailForm.reset();
+
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+              this.emailForm.reset();
+
+        }
+      );
   }
-  onEmailConfirm(emailForm: FormGroup) {}
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  onFormSubmit(): void {
+    if (this.emailForm.valid) {
+      console.log("Form submitted");
+      console.log(this.emailForm.value);
+    }
+  }
 }

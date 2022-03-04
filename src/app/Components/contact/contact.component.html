@@ -39,7 +39,8 @@
           <p>Message me</p>
         </div>
 
-        <form [formGroup]="emailForm" (ngSubmit)="sendMessage()">
+        <!-- contact form -->
+        <form [formGroup]="emailForm" (ngSubmit)="onFormSubmit()">
           <div class="fields">
             <div class="field name">
               <input
@@ -87,8 +88,8 @@
           <div class="button-area">
             <button
               type="submit"
+              (click)="open(content)"
               [disabled]="emailForm.invalid"
-              (click)="sendMessage()"
             >
               Send message
             </button>
@@ -101,28 +102,56 @@
 
 <!-- Confirmation Modal section -->
 <ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  <div
+    class="modal-header"
+    [ngStyle]="{ color: 'crimson', margin: '11px', padding: '11px' }"
+  >
+    <h5 class="modal-title" id="modal-basic-title">
+      Message sent successfully.
+    </h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
   </div>
-  <div class="modal-body">
-    <form>
-      <div class="mb-3">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
-          <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
-        </div>
-      </div>
-    </form>
+
+  <div
+    class="modal-body"
+    [ngStyle]="{
+      margin: '11px',
+      padding: '11px',
+      'border-radius': '6px'
+    }"
+  >
+    <h4 class="modal-title" id="modal-basic-title">
+      Thank you for reaching out. You'll hear back from me soon.
+    </h4>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+
+  <div class="button-area modal-footer">
+    <button
+      type="button"
+      (click)="modal.close('Save click')"
+      [disabled]="emailForm.invalid"
+      [ngStyle]="{
+        background: 'crimson',
+        color: '#fff',
+        'font-size': '20px',
+        padding: '2px 30px',
+        margin: '20px',
+        'font-weight': '400',
+        'border-radius': '6px',
+        transition: 'all 0.3s ease',
+        'text-decoration': 'none',
+        border: '4px solid crimson',
+        'box-sizing': 'border-box'
+      }"
+    >
+      Close
+    </button>
   </div>
 </ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
-
-<hr>
-
-<pre>{{ closeResult }}</pre>
+<!-- display results of close modal -->
+<!-- <pre>{{ closeResult }}</pre> -->
