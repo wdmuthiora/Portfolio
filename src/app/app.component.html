@@ -1,42 +1,83 @@
-<nav class="navbar fixed-top bg-dark">
+<!-- <nav class="navbar fixed-top bg-dark">
   <div class="container nav-container">
     <ul class="nav">
       <li class="nav-item">
-        <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/home" routerLinkActive="active" >
+        <a
+          class="navbar-brand navbar-dark bg-dark navbar-text"
+          routerLink="/home"
+          routerLinkActive="active"
+        >
           HOME
         </a>
       </li>
       <li class="nav-item">
-        <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/projects" routerLinkActive="active" >
+        <a
+          class="navbar-brand navbar-dark bg-dark navbar-text"
+          routerLink="/projects"
+          routerLinkActive="active"
+        >
           PROJECTS
         </a>
       </li>
       <li class="nav-item">
-        <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/contact" routerLinkActive="active">
+        <a
+          class="navbar-brand navbar-dark bg-dark navbar-text"
+          routerLink="/contact"
+          routerLinkActive="active"
+        >
           CONTACT
         </a>
       </li>
       <li class="nav-item">
-        <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/skills" routerLinkActive="active" >
+        <a
+          class="navbar-brand navbar-dark bg-dark navbar-text"
+          routerLink="/skills"
+          routerLinkActive="active"
+        >
           SKILLS
         </a>
       </li>
       <li class="nav-item">
-        <a class="navbar-brand navbar-dark bg-dark navbar-text" routerLink="/about-me" routerLinkActive="active"
-          >
+        <a
+          class="navbar-brand navbar-dark bg-dark navbar-text"
+          routerLink="/about-me"
+          routerLinkActive="active"
+        >
           ABOUT ME
         </a>
       </li>
     </ul>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
   </div>
+</nav> -->
+<nav class="navbar">
+
+  <div class="max-width">
+    <div class="logo">
+      <a href="#">Muthiora<span></span></a>
+    </div>
+    <ul class="menu ">
+      <li><a href="#home" class="menu-btn">Home</a></li>
+      <li><a href="#about" class="menu-btn">About</a></li>
+      <li><a href="#services" class="menu-btn">Services</a></li>
+      <li><a href="#contact" class="menu-btn">Contact</a></li>
+    </ul>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+
 </nav>
-
 <app-home></app-home>
-
 <footer class="footer">
-  <span style="display: grid; place-content: center">
-    2022 All rights reserved.
-  </span>
+  <div style="padding-left: 10%; padding-right: 10%; place-content: center">
+    <hr />
+    <span style="display: grid; place-content: center">
+      2022 All rights reserved.
+    </span>
+  </div>
 </footer>
 
 <router-outlet></router-outlet>
