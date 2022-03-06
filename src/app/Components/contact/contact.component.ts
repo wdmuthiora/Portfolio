@@ -6,9 +6,11 @@ import {
   NgForm,
   Validators,
 } from '@angular/forms';
-import { ContactService } from 'src/app/services/contact service/contact.service';
 
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import '../../../assets/js/smtp.js';
+import {email}from '../../../email.environment'
+declare let Email: any;
 
 @Component({
   selector: 'app-contact',
@@ -27,6 +29,10 @@ export class ContactComponent implements OnInit {
   });
 
   closeResult = '';
+  name = '';
+  email = '';
+  subject = '';
+  message = '';
 
   constructor(private modalService: NgbModal) {}
 
@@ -37,13 +43,11 @@ export class ContactComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed with: ${result}`;
-              this.emailForm.reset();
-
+          this.emailForm.reset();
         },
         (reason) => {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-              this.emailForm.reset();
-
+          this.emailForm.reset();
         }
       );
   }
@@ -60,8 +64,25 @@ export class ContactComponent implements OnInit {
 
   onFormSubmit(): void {
     if (this.emailForm.valid) {
-      console.log("Form submitted");
+      console.log('Form submitted');
       console.log(this.emailForm.value);
+
+      //get input data
+      this.name = this.emailForm.get('name')?.value;
+      this.email = this.emailForm.get('email')?.value;
+      this.subject = this.emailForm.get('subject')?.value;
+      this.message = this.emailForm.get('message')?.value;
+
+      Email.send({
+        Host: email.EmailSend.Host,
+        Username: email.EmailSend.Username,
+        Password: email.EmailSend.Password,
+        To: email.EmailSend.To,
+        From: email.EmailSend.Username,
+        Subject: this.subject,
+        Body: `
+          <i>This is sent as a feedback from my resume page.</i> <br/> <b>Name: </b>${this.name} <br /> <b>Email: </b>${this.email}<br /> <b>Subject: </b>${this.subject}<br /> <b>Message:</b> <br /> ${this.message} <br><br> <b>~End of Message.~</b> `,
+      }).then(() => console.log('Message sent.'));
     }
   }
 }
