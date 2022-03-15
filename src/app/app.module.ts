@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactService } from './services/contact service/contact.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgParticlesModule } from 'ng-particles';
+
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     HttpClientModule,
     NgbModule,
+    NgParticlesModule
   ],
   providers: [ContactService],
   bootstrap: [AppComponent],

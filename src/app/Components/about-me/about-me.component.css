@@ -75,11 +75,10 @@ form {
   padding-left: 105px;
 }
 .max-width {
-    max-width: 1300px;
-    padding: 0 80px;
-    margin: auto;
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
 }
-
 
 /* responsive media query start */
 @media (max-width: 1104px) {
@@ -207,4 +206,13 @@ form {
     font-size: 23px;
     line-height: 38px;
   }
+}
+.canvas {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: absoute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
