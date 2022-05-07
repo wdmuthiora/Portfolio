@@ -135,7 +135,7 @@ div{
 }
 .home {
   display: flex;
-  background: url("../../../assets/images/IMG_20220322_175438.jpg")
+  background: url("../../../assets/images/hero_image.jpg")
     no-repeat center;
   height: 100vh;
   color: #fff;
