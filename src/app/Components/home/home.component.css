@@ -135,8 +135,7 @@ div{
 }
 .home {
   display: flex;
-  background: url("../../../assets/images/hero_image.jpg")
-    no-repeat center;
+
   height: 100vh;
   color: #fff;
   min-height: 500px;
